@@ -3,7 +3,7 @@
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg)](https://nodejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0%2B-blue.svg)](https://www.typescriptlang.org/)
 [![MCP](https://img.shields.io/badge/Protocol-Model%20Context%20Protocol-purple.svg)](https://modelcontextprotocol.io/)
-[![License: ISC](https://img.shields.io/badge/License-ISC-yellow.svg)](https://opensource.org/licenses/ISC)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 A high-performance **Model Context Protocol (MCP)** server and CLI tool engineered to drastically reduce token consumption when coding with AI assistants (Claude, Cursor, Gemini, Copilot, Windsurf).
 
@@ -11,25 +11,25 @@ It intercepts code sent to LLMs, compacts it to minimal tokens, enforces surgica
 
 ---
 
-## 🎯 The Problem & The Solution
+## The Problem & The Solution
 
 - **The Problem**: Sending full, boilerplate-heavy, indented source files to LLMs rapidly exhausts context windows, degrades attention ("lost in the middle" phenomenon), and drives up API costs.
 - **The Solution**: `mcp-token-optimizer` minifies source code structurally before delivery to the model, reducing context consumption by **10% to 30%**. When the AI replies with surgical edits, the server restores formatting via **Prettier**, verifies that the **AST is intact** (preventing syntax breakage), and snapshots changes with undo capability.
 
 ---
 
-## ✨ Features
+## Features
 
-- 🗜️ **Token Compaction (`read_file`)**: Strips non-essential indentation, blank lines, and whitespace while strictly safeguarding strings and syntax.
+- **Token Compaction (`read_file`)**: Strips non-essential indentation, blank lines, and whitespace while strictly safeguarding strings and syntax.
 - 🩺 **Surgical Edits with AST Validation (`apply_code_edit`)**: Applies diffs using `<<<< SEARCH ... ==== ... >>>> REPLACE` blocks. Automatically validates syntax via Tree-sitter and formats with Prettier before saving to disk.
-- 🛡️ **Snapshot & History Manager**: Keeps historical snapshots of files prior to edits with undo and roll-back capabilities.
-- 🔍 **Project Token Scanner (`scan_project`)**: Analyzes whole repositories and reports potential token savings and file-by-file optimization rates.
-- 📊 **Real-time Session Analytics (`get_optimizer_status`)**: Monitors read operations, edit count, tokens saved, and economy percentage in real time.
-- 🌐 **Multi-Language AST Support**: Built-in Tree-Sitter grammars for **TypeScript**, **JavaScript**, **Python**, and **Java**.
+- **Snapshot & History Manager**: Keeps historical snapshots of files prior to edits with undo and roll-back capabilities.
+- **Project Token Scanner (`scan_project`)**: Analyzes whole repositories and reports potential token savings and file-by-file optimization rates.
+- **Real-time Session Analytics (`get_optimizer_status`)**: Monitors read operations, edit count, tokens saved, and economy percentage in real time.
+- **Multi-Language AST Support**: Built-in Tree-Sitter grammars for **TypeScript**, **JavaScript**, **Python**, and **Java**.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 mcp-token-optimizer/
@@ -54,7 +54,7 @@ mcp-token-optimizer/
 
 ---
 
-## 📦 Installation & Setup
+## Installation & Setup
 
 ```bash
 # 1. Clone the repository
@@ -70,7 +70,7 @@ npm run build
 
 ---
 
-## ⚙️ Configuration (`token-optimizer.config.json`)
+## Configuration (`token-optimizer.config.json`)
 
 You can customize the optimizer by creating a `token-optimizer.config.json` file in the root of your project:
 
@@ -111,13 +111,13 @@ You can customize the optimizer by creating a `token-optimizer.config.json` file
 | `apiKey` | `string` | `undefined` | Optional direct API key for token counting services. |
 | `apiKeyPath` | `string` | `undefined` | Relative or absolute path to a file containing the API key. |
 
-### 🔑 API Key Auto-Discovery
+### API Key Auto-Discovery
 If not specified in `token-optimizer.config.json`, the optimizer automatically detects API keys from your environment variables:
 - `OPENAI_API_KEY`
 - `ANTHROPIC_API_KEY`
 - `GEMINI_API_KEY`
 
-### 🎨 Prettier Integration
+### Prettier Integration
 The optimizer includes full automatic Prettier integration. When an AI applies edits through `apply_code_edit`:
 1. It looks for local Prettier configuration (`.prettierrc`, `.prettierrc.json`, `prettier.config.js`, or `package.json`).
 2. If found, it respects the user's project formatting rules.
@@ -125,7 +125,7 @@ The optimizer includes full automatic Prettier integration. When an AI applies e
 
 ---
 
-## 🔌 Connecting to AI Assistants (MCP Setup)
+## Connecting to AI Assistants (MCP Setup)
 
 ### 1. Claude Desktop (`claude_desktop_config.json`)
 
@@ -169,7 +169,7 @@ Add the directives from `.cursorrules` to your project's `.cursorrules` or `.win
 
 ---
 
-## 🛠️ CLI Usage
+## CLI Usage
 
 ```bash
 # Start the MCP server directly
@@ -199,7 +199,7 @@ npm run start status
 
 ---
 
-## 🧪 Testing with MCP Inspector
+## Testing with MCP Inspector
 
 Test tools interactively via the official visual MCP Inspector:
 
@@ -211,7 +211,7 @@ This launches a local web UI where you can invoke tools (`read_file`, `scan_proj
 
 ---
 
-## 📜 Available Scripts
+## Available Scripts
 
 - `npm run build`: Compiles TypeScript into `dist/`.
 - `npm run start`: Runs compiled MCP server.
@@ -220,6 +220,6 @@ This launches a local web UI where you can invoke tools (`read_file`, `scan_proj
 
 ---
 
-## 📄 License
+## License
 
-This project is licensed under the **ISC License**.
+This project is licensed under the **MIT License** - see the [LICENSE](file:///Users/lucasportinho/Codigos/projeto-tokens-ia/LICENSE) file for details.
