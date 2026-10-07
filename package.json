@@ -1,0 +1,38 @@
+{
+  "name": "projeto-tokens-ia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js start",
+    "start:mcp": "node dist/index.js start",
+    "dev:mcp": "npx tsx src/index.ts start",
+    "inspector": "npx @modelcontextprotocol/inspector npx tsx src/index.ts start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@types/diff-match-patch": "^1.0.36",
+    "@types/node": "^26.6.2",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.127.0",
+    "@google/generative-ai": "^0.24.1",
+    "@modelcontextprotocol/sdk": "^1.31.0",
+    "commander": "^15.0.0",
+    "diff-match-patch": "^1.0.5",
+    "fs": "^0.0.1-security",
+    "ignore": "^7.0.11",
+    "prettier": "^3.9.9",
+    "tiktoken": "^1.0.22",
+    "tree-sitter": "^0.25.1",
+    "tree-sitter-java": "^0.23.5",
+    "tree-sitter-javascript": "^0.25.0",
+    "tree-sitter-python": "^0.25.0",
+    "tree-sitter-typescript": "^0.23.2"
+  }
+}
