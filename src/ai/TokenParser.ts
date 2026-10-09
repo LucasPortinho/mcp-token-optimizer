@@ -1,4 +1,3 @@
-
 import type { ParserNode, ProtectedCode } from "../@types/parsers.js";
 import type { LanguageRegistry } from "../adapters/registry/LanguageRegistry.js";
 import { StructureComparator } from "./StructureComparator.js";
